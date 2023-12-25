@@ -1,14 +1,19 @@
 pipeline {
    agent any
    stages {
+     stage('git clone'){
+       steps{
+         git 'https://github.com/AvinashGuruka/Maven.git'
+       }
+     }
      stage('build'){
        steps{
-         echo "build is successful"
+         bat 'clean install'
        }
      }
      stage('test'){
        steps{
-         echo "test is successful"
+         echo "deploy is successful"        
        }
      }
      stage('deploy'){
