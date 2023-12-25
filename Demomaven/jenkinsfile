@@ -8,8 +8,9 @@ pipeline {
      }
      stage('build'){
        steps{
-         cd C:\Users\avina\git\Maven\Demomaven\pom.xml
-         bat 'mvn clean install'
+         dir('C:\\Users\\avina\\git\\Maven\\Demomaven\\pom.xml') {
+           bat 'mvn clean install'
+         }   
        }
      }
      stage('test'){
